@@ -1,0 +1,6 @@
+create TABLE sites (
+id       SERIAL  PRIMARY KEY NOT NULL,
+siteUrl  VARCHAR UNIQUE NOT NULL,
+login    VARCHAR UNIQUE NOT NULL,
+password VARCHAR NOT NULL
+);
