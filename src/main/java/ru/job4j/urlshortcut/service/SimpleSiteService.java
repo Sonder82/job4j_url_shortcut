@@ -41,10 +41,12 @@ public class SimpleSiteService implements SiteService, UserDetailsService {
         checkUrlSite(siteDto);
         Site site = new Site();
         site.setSiteURL(siteDto.getSiteURL());
-        site.setLogin(CodeGenerator.getCode());
-        site.setPassword(encoder.encode(CodeGenerator.getCode()));
+        String login = CodeGenerator.getCode();
+        site.setLogin(login);
+        String password = CodeGenerator.getCode();
+        site.setPassword(encoder.encode(password));
         siteRepository.save(site);
-        return new SignUpSiteDto(true, site.getLogin(), site.getPassword());
+        return new SignUpSiteDto(true, login, password);
     }
 
     /**
