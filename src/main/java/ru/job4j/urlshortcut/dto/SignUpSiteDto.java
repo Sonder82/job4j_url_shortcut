@@ -1,32 +1,25 @@
-package ru.job4j.urlshortcut.model;
+package ru.job4j.urlshortcut.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 /**
  * Класс содержит модель SignUpSite.
  * SignUpSite - хранит данные для входа для сайта (логин и пароль), полученные от сервиса.
  */
 @Data
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Table(name = "signUpSites")
-public class SignUpSite {
+public class SignUpSiteDto {
 
-    @Id
-    @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotNull(message = "Id must be non null")
-    private int id;
+    /**
+     * статус регистрации
+     */
+    private boolean registration;
 
     /**
      * Логин

@@ -31,7 +31,19 @@ public class Site {
     /**
      * URL сайта
      */
-    @NotBlank(message = "Value must be not empty")
+    @NotBlank(message = "Web site url must be not empty")
     private String siteURL;
+
+    /**
+     * Логин
+     */
+    @NotBlank(message = "Login must be not empty")
+    private String login;
+
+    /**
+     * Пароль
+     */
+    @NotBlank(message = "Password must be not empty")
+    private String password;
 
 }
