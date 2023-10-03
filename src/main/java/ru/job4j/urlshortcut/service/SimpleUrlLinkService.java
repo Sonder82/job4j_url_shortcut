@@ -6,6 +6,7 @@ import ru.job4j.urlshortcut.dto.ModifiedLinkDto;
 import ru.job4j.urlshortcut.dto.OriginalLinkDto;
 import ru.job4j.urlshortcut.model.UrlLink;
 import ru.job4j.urlshortcut.repository.UrlLinkRepository;
+import ru.job4j.urlshortcut.utils.CodeGenerator;
 
 import java.util.List;
 
@@ -17,8 +18,12 @@ public class SimpleUrlLinkService implements UrlLinkService {
 
     @Override
     public ModifiedLinkDto save(OriginalLinkDto originalLinkDto) {
-
-        return null;
+        UrlLink url = new UrlLink();
+        url.setNameOri(originalLinkDto.getNameOri());
+        String modifiedUrl = CodeGenerator.getCode();
+        url.setNameMod(modifiedUrl);
+        urlLinkRepository.save(url);
+        return new ModifiedLinkDto(modifiedUrl);
     }
 
     @Override
