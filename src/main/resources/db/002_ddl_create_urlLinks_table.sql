@@ -1,0 +1,5 @@
+create TABLE urlLinks (
+id       SERIAL  PRIMARY KEY NOT NULL,
+nameOri  VARCHAR UNIQUE NOT NULL,
+nameMod    VARCHAR UNIQUE NOT NULL
+);
