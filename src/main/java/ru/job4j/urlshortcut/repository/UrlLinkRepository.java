@@ -9,4 +9,5 @@ import java.util.List;
 public interface UrlLinkRepository extends CrudRepository<UrlLink, Integer> {
 
     List<UrlLink> findAll();
+
 }

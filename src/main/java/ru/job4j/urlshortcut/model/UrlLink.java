@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Table(name = "urlLinks")
+@Table(name = "url_links")
 public class UrlLink {
 
     @Id
@@ -27,12 +27,14 @@ public class UrlLink {
      * имя ссылки оригинальное(отправленное в сервис)
      */
     @NotBlank(message = "url link must be not empty")
+    @Column(name = "name_ori")
     private String nameOri;
 
     /**
      * имя ссылки преобразованное(полученное в виде кода от сервиса)
      */
     @NotBlank(message = "Code must be not empty")
+    @Column(name = "name_mod")
     private String nameMod;
 
 }
