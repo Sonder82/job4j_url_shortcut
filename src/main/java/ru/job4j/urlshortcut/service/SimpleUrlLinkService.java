@@ -11,6 +11,7 @@ import ru.job4j.urlshortcut.repository.UrlLinkRepository;
 import ru.job4j.urlshortcut.utils.CodeGenerator;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Сервис выполняет преобразование полученных url ссылок.
@@ -46,5 +47,10 @@ public class SimpleUrlLinkService implements UrlLinkService {
     @Override
     public List<UrlLink> findAll() {
         return urlLinkRepository.findAll();
+    }
+
+    @Override
+    public Optional<UrlLink> findUrlByNameMod(String nameMod) {
+        return urlLinkRepository.findUrlByNameMod(nameMod);
     }
 }
