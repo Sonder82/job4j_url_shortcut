@@ -19,4 +19,9 @@ public class OriginalLinkDto {
      */
     @NotBlank(message = "url link must be not empty")
     private String nameOri;
+
+    /**
+     * Количество вызовов ссылки
+     */
+    private int calls;
 }

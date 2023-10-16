@@ -9,5 +9,6 @@
     <include file="db/001_ddl_create_sites_table.sql" relativeToChangelogFile="true"/>
     <include file="db/002_ddl_create_urlLinks_table.sql" relativeToChangelogFile="true"/>
     <include file="db/003_ddl_alter_name_urlLinks_table.sql" relativeToChangelogFile="true"/>
+    <include file="db/004_ddl_add_columns_urlLinks_table.sql" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

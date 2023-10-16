@@ -37,4 +37,16 @@ public class UrlLink {
     @Column(name = "name_mod")
     private String nameMod;
 
+    /**
+     * количество вызовов ссылки
+     */
+    @Column(name = "calls")
+    private int calls;
+
+    /**
+     * Сайт
+     */
+    @ManyToOne
+    @JoinColumn(name = "site_id")
+    private Site site;
 }

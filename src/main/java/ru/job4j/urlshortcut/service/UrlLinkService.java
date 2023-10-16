@@ -1,6 +1,5 @@
 package ru.job4j.urlshortcut.service;
 
-import org.springframework.http.HttpHeaders;
 import org.springframework.security.core.Authentication;
 import ru.job4j.urlshortcut.dto.ModifiedLinkDto;
 import ru.job4j.urlshortcut.dto.OriginalLinkDto;
@@ -13,7 +12,11 @@ public interface UrlLinkService {
 
     ModifiedLinkDto save(OriginalLinkDto originalLinkDto, Authentication authentication);
 
-    List<UrlLink> findAll();
+    Optional<UrlLink> findByModName(String modName);
 
-    Optional<UrlLink> findUrlByNameMod(String nameMod);
+    UrlLink getOriModAndIncrement(String nameMod);
+
+    void incrementCalls(int urlId);
+
+    List<OriginalLinkDto> findAndGetUrls();
 }
