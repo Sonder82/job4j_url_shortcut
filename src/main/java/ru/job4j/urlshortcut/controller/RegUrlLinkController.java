@@ -20,11 +20,6 @@ public class RegUrlLinkController {
 
     private final UrlLinkService urlLinkService;
 
-    @GetMapping("/all")
-    public List<UrlLink> findAll() {
-        return urlLinkService.findAll();
-    }
-
     @PostMapping("/")
     public ResponseEntity<ModifiedLinkDto> registration(
             @Valid @RequestBody OriginalLinkDto originalLinkDto, Authentication authentication) {

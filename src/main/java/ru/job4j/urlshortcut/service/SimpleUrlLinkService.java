@@ -10,6 +10,7 @@ import ru.job4j.urlshortcut.repository.SiteRepository;
 import ru.job4j.urlshortcut.repository.UrlLinkRepository;
 import ru.job4j.urlshortcut.utils.CodeGenerator;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -68,6 +69,7 @@ public class SimpleUrlLinkService implements UrlLinkService {
      * @param nameMod преобразованная ссылка(код)
      * @return URL
      */
+    @Transactional
     @Override
     public UrlLink getOriModAndIncrement(String nameMod) {
         Optional<UrlLink> url = findByModName(nameMod);

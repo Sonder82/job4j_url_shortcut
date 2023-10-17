@@ -16,8 +16,11 @@ public interface UrlLinkRepository extends CrudRepository<UrlLink, Integer> {
 
     Optional<UrlLink> findUrlByNameMod(String nameMod);
 
-    @Transactional
     @Modifying
-    @Query("UPDATE url_links u SET u.calls = :u.calls + 1 WHERE u.id = :id")
+    @Query(value = """
+            UPDATE url_links
+            SET calls = calls + 1
+            WHERE id = ?1
+            """, nativeQuery = true)
     int incrementCalls(int urlId);
 }
